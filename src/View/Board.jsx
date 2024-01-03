@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import Sheet from "@sihilelh/gsheet.db";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -24,13 +25,25 @@ export default function Board() {
       return false;
     }
   })(); // This is an annonimus function that decodes the slug
+  const [sheetData, setSheetData] = useState([]);
   useEffect(() => {
     if (!boardData) {
       toast.error("Invalid URL");
       navigate("/"); // If the url is invalid it will return to home
     }
+    setInterval(refresh, boardData.update_every * 1000);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log(boardData);
-  return <div>Board</div>;
+
+  async function refresh() {
+    try {
+      const sheet = new Sheet(boardData.doc_id, "board");
+      let data = await sheet.all();
+      setSheetData(data);
+    } catch (error) {
+      toast.error("Something went wrong while refreshing", { id: "ref" });
+    }
+  }
+
+  return <div>{JSON.stringify(sheetData)}</div>;
 }
