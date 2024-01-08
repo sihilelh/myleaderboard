@@ -65,7 +65,10 @@ export default function Home() {
               />
               <div className="text-xs text-neutral-500">
                 First make a google sheet & copy{" "}
-                <a href="#" className="text-blue-500 underline">
+                <a
+                  href="https://docs.google.com/spreadsheets/d/1bsCWUE1Lyxywvb0rHA4YIHkXaShGn8v5dHbAYW_mIxQ/edit#gid=0"
+                  className="text-blue-500 underline"
+                >
                   this sheet
                 </a>{" "}
                 format to yours.
