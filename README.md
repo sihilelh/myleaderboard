@@ -27,7 +27,7 @@ MyLeaderboard is a simple and publicly accessible leaderboard application that f
    - Copy the Google Sheet format from [this link](https://docs.google.com/spreadsheets/d/1bsCWUE1Lyxywvb0rHA4YIHkXaShGn8v5dHbAYW_mIxQ/edit).
 
 3. **Open the App:**
-   - Open the MyLeaderboard app, paste the Google Sheet link on the home page, and press the open button.
+   - Open the MyLeaderboard app by visiting [leaderboard.sihilel.com](https://leaderboard.sihilel.com), paste the Google Sheet link on the home page, and press the open button.
 
 ## Google Sheet Structure
 
